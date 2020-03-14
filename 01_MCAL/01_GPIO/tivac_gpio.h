@@ -1,14 +1,14 @@
-/**************************************************************************/
-/* File name: GPIO.GPIO_H_												  */
-/*																		  */
-/*																		  */
-/* Description: This file contains The APIs for GPIO Driver and macros    */ 
-/* used by user                                                           */
-/*																		  */
-/* owner: Martha														  */				
-/* date: 26/2/2020														  */
-/* version 1.1															  */				
-/*																		  */			
+/***************************************************************************
+ * File name: GPIO.GPIO_H_												  
+ *																		  
+ *																		  
+ * Description: This file contains The APIs for GPIO Driver and macros    
+ * used by user                                                           
+ *																		  
+ * owner: Martha														  				
+ * date: 26/2/2020														  
+ * version 1.1															  				
+ *																		  			
 /**************************************************************************/
 
 #ifndef GPIO_H_

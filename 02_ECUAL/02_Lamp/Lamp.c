@@ -12,7 +12,7 @@ Error_Status Lamp_Init(void)
 /****************************************************************************/
 
 /* Lamp_Update takes Lamp channel and status to turn lamp ON or OFF */
-Error_Status Lamp_Update(u32 LAMP_CH, u8 LAMP_Status)
+Error_Status Lamp_Update(u8 LAMP_CH, u8 LAMP_Status)
 {
 	Error_Status loc_err = E_OK;
 	switch(LAMP_Status)
