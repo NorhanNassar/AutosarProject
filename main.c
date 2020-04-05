@@ -1,7 +1,9 @@
-#include "./04_LIB/STD_TYPES.h"
-#include "./03_APP/01_LeftDoor/Left_Door.h"
-#include "./03_APP/02_RightDoor/Right_Door.h"
-#include "./03_APP/03_Lighting/Lighting.h"
+#include "STD_TYPES.h"
+#include "Left_Door.h"
+#include "Right_Door.h"
+#include "Lightning.h"
+#include "DoorSensor.h"
+#include "Lamp.h"
 
 void main(void) {
     u8 DoorStatus_L;
@@ -9,13 +11,12 @@ void main(void) {
 
     RightDoor_Init();
     leftDoor_Init();
-    Lighting_Init();
+    Lamp_Init();
     while(1){
         RightDoor_ReadStatus(&DoorStatus_R);
         LeftDoor_ReadStatus(&DoorStatus_L);
-        if( (DoorStatus_L == DOOROPEN) || (DoorStatus_R == DOOROPEN) )
-            Lighting_Control(LIGHT_ON);
-        else
-            Lighting_Control(LIGHT_OFF);
+        DoorSensor_ReadStatus();
+        Lighting_Control();
+        Lamp_Update();
     }
 }

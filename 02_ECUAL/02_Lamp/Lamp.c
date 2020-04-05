@@ -1,46 +1,28 @@
 #include "STD_TYPES.h"
-#include "tivac_gpio.h"
+#include "RTE.h"
 #include "Lamp.h"
 
 /* Lamp Initialization to initialize all Lamp channels at lightning system */
 Error_Status Lamp_Init(void)
 {
-	Error_Status loc_err = E_OK;
-	loc_err = D_GPIO_Init(LAMP_PORT_CH0,LAMP_PIN_CH0,LAMP_MODE_CH0);
-	return loc_err;
+    return (RTE_Call_Init_Lamp());
 }
 /****************************************************************************/
 
-/* Lamp_Update takes Lamp channel and status to turn lamp ON or OFF */
-Error_Status Lamp_Update(u8 LAMP_CH, u8 LAMP_Status)
+/* Lamp_Update turns lamp ON or OFF */
+Error_Status Lamp_Update()
 {
-	Error_Status loc_err = E_OK;
-	switch(LAMP_Status)
+    Error_Status loc_err = E_OK;
+    u8 LampStatus;
+    RTE_Read_Lamp_Status(&LampStatus);
+	switch(LampStatus)
 		{
 			case L_ON:
-			switch(LAMP_CH)
-			{
-				case LAMP_CH0:
-				loc_err = D_GPIO_WritePin(LAMP_PORT_CH0,LAMP_PIN_CH0,L_ON);
-				break;
-
-				default:
-				loc_err = E_NOK;
-				break;
-			}
-
+			    RTE_Set_Lamp_Status();
+			    break;
 			case L_OFF:
-			switch(LAMP_CH)
-			{
-				case LAMP_CH0:
-				loc_err = D_GPIO_WritePin(LAMP_PORT_CH0,LAMP_PIN_CH0,L_OFF);
-				break;
-
-				default:
-				loc_err = E_NOK;
-				break;
-			}
-
+			    RTE_Reset_Lamp_Status();
+			    break;
 			default:
 			loc_err = E_NOK;
 			break;
