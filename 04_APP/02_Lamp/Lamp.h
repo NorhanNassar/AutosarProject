@@ -15,6 +15,6 @@
 
 /*************************************************/
 Error_Status Lamp_Init(void);
-Error_Status Lamp_Update(u32 LAMP_CH, u8 LAMP_Status);
+Error_Status Lamp_Update();
 
 #endif

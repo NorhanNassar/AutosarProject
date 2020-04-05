@@ -2,10 +2,6 @@
 #include "RTE.h"
 #include "Lightning.h"
 
-Error_Status Lighting_Init(void)
-{
-    return ();
-}
 
 Error_Status Lighting_Control()
 {

@@ -8,7 +8,7 @@
 
 #define RIGHT_DOOR_PORT        PORT_F
 #define RIGHT_DOOR_PIN          0
-#define RIGHT_DOOR__MODE        INPUT_PIN
+#define RIGHT_DOOR_MODE        INPUT_PIN
 
 #define LEFT_DOOR_PORT         PORT_F
 #define LEFT_DOOR_PIN          4
