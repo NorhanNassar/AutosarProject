@@ -11,15 +11,15 @@
 
 #define RIGHT_DOOR_PORT         'F'
 #define RIGHT_DOOR_PIN          0
-#define RIGHT_DOOR_MODE         INPUT_PIN
+#define RIGHT_DOOR_MODE         0
 
 #define LEFT_DOOR_PORT         'F'
 #define LEFT_DOOR_PIN           4
-#define LEFT_DOOR_MODE          INPUT_PIN
+#define LEFT_DOOR_MODE          0
 
 #define LAMP_PORT               'F'
 #define LAMP_PIN                1
-#define LAMP_MODE               OUTPUT_PIN
+#define LAMP_MODE               1
 
 #define ON                      1
 #define OFF                     0

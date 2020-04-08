@@ -27,8 +27,7 @@ Error_Status Sched_init(void)
 
 Error_Status Sched_Start(void)
 {
-	if(SYSTICK_Start())					/* Start Systick to start count */
-		return E_NOK;					/* if systick returns NOT_OK =1 so Sched_start returns NOT_OK */
+	Timer0_voidStart();
 	while(1)
 	{
 		while(!schedStartFlag);			/* when tick is arrived schedStartFlag will not be zero */

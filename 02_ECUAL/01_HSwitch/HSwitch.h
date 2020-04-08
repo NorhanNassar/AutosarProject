@@ -41,5 +41,3 @@ extern void HSwitch_Runnable(void);
 #endif /* HSWITCH_H_ */
 
 
-
-#endif /* DOORSENSOR_H_ */
