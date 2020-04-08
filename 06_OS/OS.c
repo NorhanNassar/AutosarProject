@@ -20,13 +20,8 @@ Error_Status Sched_SystickCbf(void)
 Error_Status Sched_init(void)
 {
 	/* Init Timer to make an interrupt every tick time */
-	if(Timer0_voidInit())
-		return E_NOK;
-	if(Timer0_voidSetTime(TICKTIMEMS*1000))			/* TICKTIMEMS*1000 to convert it to micro */
-		return E_NOK;
-
+	Timer0_voidInit();
 	Timer0_voidSetCallBack(&Sched_SystickCbf);
-
 	Sched_CreatTasks();
 	return E_OK;
 }
