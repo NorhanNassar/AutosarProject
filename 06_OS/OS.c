@@ -15,7 +15,6 @@ Error_Status Sched_SystickCbf(void)
 	schedStartFlag++;				/* to handle a lot of one if an interrupt cut one while running */
 	return E_OK;
 }
-
 /* at cfg file Tick time must be configured in milli sec	*/
 Error_Status Sched_init(void)
 {
