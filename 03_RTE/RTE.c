@@ -1,5 +1,7 @@
 #include "STD_TYPES.h"
-#include "tivac_gpio.h"
+#include "DIO_interface.h"
+#include "HSwitch_cfg.h"
+#include "HSwitch.h"
 #include "RTE.h"
 /*RTE Variables*/
 static u8 Rte_RightDoor = DOOR_CLOSED;
@@ -55,39 +57,44 @@ Error_Status RTE_Write_Lamp_Status(u8 LampStatus)
    return E_OK;
 }
 
+Error_Status RTE_Call_Read_Door(u32 Port,u32 Pin,u8* Door)
+{
+    return(getPinValue(Port, Pin,Door));
+}
+
 Error_Status RTE_Call_Read_RightDoor_Status(u8* RDoorStatus)
 {
-    return(D_GPIO_ReadPin(RIGHT_DOOR_PORT, RIGHT_DOOR_PIN,RDoorStatus));
+    return(Switch_getSwitchState(RIGHT_DOOR,RDoorStatus));
 }
 
 Error_Status RTE_Call_Read_LeftDoor_Status(u8* LDoorStatus)
 {
-    return(D_GPIO_ReadPin(LEFT_DOOR_PORT, LEFT_DOOR_PIN, LDoorStatus));
+    return(Switch_getSwitchState(LEFT_DOOR,LDoorStatus));
 }
 
 Error_Status RTE_Set_Lamp_Status()
 {
-    return (D_GPIO_WritePin(LAMP_PORT, LAMP_PIN, ON));
+    return (setPinValue(LAMP_PORT, LAMP_PIN, ON));
 }
 
 Error_Status RTE_Reset_Lamp_Status()
 {
-    return (D_GPIO_WritePin(LAMP_PORT, LAMP_PIN, OFF));
+    return (setPinValue(LAMP_PORT, LAMP_PIN, OFF));
 }
 
 Error_Status RTE_Call_Init_LeftDoor()
 {
-    return (D_GPIO_Init(LEFT_DOOR_PORT,LEFT_DOOR_PIN,LEFT_DOOR_MODE));
+    return (setPinDir(LEFT_DOOR_PORT,LEFT_DOOR_PIN,LEFT_DOOR_MODE));
 }
 
 Error_Status RTE_Call_Init_RightDoor()
 {
-    return (D_GPIO_Init(RIGHT_DOOR_PORT,RIGHT_DOOR_PIN,RIGHT_DOOR_MODE));
+    return (setPinDir(RIGHT_DOOR_PORT,RIGHT_DOOR_PIN,RIGHT_DOOR_MODE));
 }
 
 Error_Status RTE_Call_Init_Lamp()
 {
-    return (D_GPIO_Init(LAMP_PORT,LAMP_PIN,LAMP_MODE));
+    return (setPinDir(LAMP_PORT,LAMP_PIN,LAMP_MODE));
 }
 
 

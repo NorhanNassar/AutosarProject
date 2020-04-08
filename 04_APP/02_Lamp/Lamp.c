@@ -1,6 +1,10 @@
 #include "STD_TYPES.h"
+#include "OS.h"
 #include "RTE.h"
 #include "Lamp.h"
+
+task_t LampTask = {&Lamp_Update,50};
+
 
 /* Lamp Initialization to initialize all Lamp channels at lightning system */
 Error_Status Lamp_Init(void)

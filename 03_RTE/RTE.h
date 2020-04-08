@@ -1,20 +1,23 @@
 #ifndef RTE_H
 #define RTE_H
 
-# define DOOR_OPEN      1
-# define DOOR_CLOSED    0
-# define LIGHT_ON       1
-# define LIGHT_OFF      0
+# define DOOR_OPEN              1
+# define DOOR_CLOSED            0
+# define LIGHT_ON               1
+# define LIGHT_OFF              0
 
-#define RIGHT_DOOR_PORT        PORT_F
+#define RIGHT_DOOR              SWITCH_0
+#define LEFT_DOOR               SWITCH_1
+
+#define RIGHT_DOOR_PORT         'F'
 #define RIGHT_DOOR_PIN          0
-#define RIGHT_DOOR_MODE        INPUT_PIN
+#define RIGHT_DOOR_MODE         INPUT_PIN
 
-#define LEFT_DOOR_PORT         PORT_F
-#define LEFT_DOOR_PIN          4
-#define LEFT_DOOR_MODE         INPUT_PIN
+#define LEFT_DOOR_PORT         'F'
+#define LEFT_DOOR_PIN           4
+#define LEFT_DOOR_MODE          INPUT_PIN
 
-#define LAMP_PORT               PORT_F
+#define LAMP_PORT               'F'
 #define LAMP_PIN                1
 #define LAMP_MODE               OUTPUT_PIN
 

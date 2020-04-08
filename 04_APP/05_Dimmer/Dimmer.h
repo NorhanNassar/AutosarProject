@@ -1,5 +1,5 @@
-#ifndef _LIGHTNING_H__
-#define _LIGHTNING_H__
+#ifndef _DIMMER_H__
+#define _DIMMER_H__
 
 /* Defines every Lighting channel
  * Channel 0 for Lamp channel 0*/
@@ -8,6 +8,6 @@
 #define LIGHT_ON        1
 #define LIGHT_OFF       0
 
-Error_Status Lighting_Control();
+void Dimmer_Runnable(void);
 
 #endif

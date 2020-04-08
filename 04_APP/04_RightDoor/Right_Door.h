@@ -6,6 +6,6 @@
 /***************************************/
 
 Error_Status RightDoor_Init(void);
-Error_Status RightDoor_ReadStatus(u8 * Door_Status);
+void RightDoor_ReadStatus_Runnable(void);
 
 #endif

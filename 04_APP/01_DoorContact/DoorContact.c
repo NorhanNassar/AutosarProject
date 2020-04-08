@@ -1,8 +1,9 @@
 #include "STD_TYPES.h"
+#include "OS.h"
 #include "RTE.h"
-#include "DoorSensor.h"
+#include "DoorContact.h"
 
-Error_Status DoorSensor_ReadStatus()
+Error_Status DoorContact_ReadStatus(void)
 {
     Error_Status loc_err = E_OK;
     u8 RDoorStatus;
