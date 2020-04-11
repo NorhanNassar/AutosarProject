@@ -1,3 +1,7 @@
+#ifndef DIO_REGISTER_H
+#define DIO_REGISTER_H
+
+
 #define PORTA           *((u8*)0x3B)
 #define DDRA            *((u8*)0x3A)
 #define PORTB           *((u8*)0x38)
@@ -10,3 +14,6 @@
 #define PORTD           *((u8*)0x32)
 #define DDRD            *((u8*)0x31)
 #define PIND            *((u8*)0x30)
+
+
+#endif
