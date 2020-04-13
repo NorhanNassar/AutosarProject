@@ -39,7 +39,7 @@ extern Error_Status Sched_Start(void);
 
 extern void Sched_Runnable(void);
 
-extern Error_Status Sched_SystickCbf(void);
+extern void Sched_SystickCbf(void);
 
 extern Error_Status Task_Suspend(taskRunnable_t tasktosus);
 
