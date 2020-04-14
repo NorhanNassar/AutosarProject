@@ -10,10 +10,9 @@ static taskMoreInfo_t Systasks[MAXTASKNUM];
 static Error_Status Sched_CreatTasks();
 
 /* Call back function for timer handler, to increment the flag that a tick has arrived */
-Error_Status Sched_SystickCbf(void)
+void Sched_SystickCbf(void)
 {
 	schedStartFlag++;				/* to handle a lot of one if an interrupt cut one while running */
-	return E_OK;
 }
 /* at cfg file Tick time must be configured in milli sec	*/
 Error_Status Sched_init(void)

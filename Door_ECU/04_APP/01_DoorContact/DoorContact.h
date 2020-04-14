@@ -2,6 +2,6 @@
 #define _DOORCONTACT_H__
 
 /*************************************************/
-Error_Status DoorContact_ReadStatus(void);
+void DoorContact_Read_Status(void);
 
 #endif

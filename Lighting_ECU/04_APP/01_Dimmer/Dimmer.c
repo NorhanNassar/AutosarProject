@@ -7,6 +7,7 @@
 void Dimmer_Runnable()
 {
   u8 DoorStatus;
+  RTE_Call_Recieve_Door_Status();
   RTE_Read_Door_Status(&DoorStatus);
 
   if(DoorStatus==DOORCLOSED)
