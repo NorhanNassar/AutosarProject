@@ -54,8 +54,4 @@ Error_Status RTE_Call_Init_RightDoor();
 
 Error_Status RTE_Call_Init_Lamp();
 
-Error_Status RTE_Call_Send_Door_Status(void);
-
-Error_Status RTE_Call_Start_Transmition(void);
-
 #endif

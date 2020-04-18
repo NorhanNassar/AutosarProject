@@ -7,11 +7,11 @@
 
 #include "STD_TYPES.h"
 #include "Com_interface.h"
+#include "Com_PCcfg.h"
 
-
-
-
-
-const Com_signal_cfg systemSignals[MAX_SIGNALS] = {
-		{0,0},							//singalID 0
+const Com_PDU_cfg systemPDUs[MAX_NUM_OF_PDUS] = {
+		/*
+		 *PDU_ID , Num of signals ,  {SignalID    ,  start bit , end bit}, ...
+		 */
+		{PDU_ID_1, 1			  ,  {SIGNAL_ID_1 ,  0         , 0}}
 };

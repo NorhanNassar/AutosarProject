@@ -9,12 +9,11 @@
 static u8 Rte_DoorsStatus = DOOR_CLOSED;
 static u8 Rte_LampStatus = LIGHT_OFF;
 
-extern const task_t DimmerTask,LampTask,ReceiveTask;
+extern const task_t DimmerTask,LampTask;
 
 
 void Task_50msec_Runnable(void)
 {
-	ReceiveTask.Runnable();
 	DimmerTask.Runnable();
     LampTask.Runnable();
 
